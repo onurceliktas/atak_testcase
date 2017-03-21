@@ -1,0 +1,266 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="atak_testcaseModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="atak_testcaseModelStoreContainer">
+          <EntitySet Name="Fotograf" EntityType="atak_testcaseModel.Store.Fotograf" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Haber" EntityType="atak_testcaseModel.Store.Haber" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Kategori" EntityType="atak_testcaseModel.Store.Kategori" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Sayfa" EntityType="atak_testcaseModel.Store.Sayfa" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Video" EntityType="atak_testcaseModel.Store.Video" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Yonetici" EntityType="atak_testcaseModel.Store.Yonetici" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Ziyaretci" EntityType="atak_testcaseModel.Store.Ziyaretci" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="Fotograf">
+          <Key>
+            <PropertyRef Name="fotografID" />
+          </Key>
+          <Property Name="fotografID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="fotografAciklama" Type="nvarchar(max)" />
+          <Property Name="fotografYol" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Haber">
+          <Key>
+            <PropertyRef Name="haberID" />
+          </Key>
+          <Property Name="haberID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="haberBaslik" Type="nvarchar" MaxLength="500" />
+          <Property Name="haberIcerik" Type="nvarchar(max)" />
+          <Property Name="haberTarih" Type="datetime" />
+          <Property Name="haberOkunmaSayisi" Type="int" />
+          <Property Name="haberTag" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Kategori">
+          <Key>
+            <PropertyRef Name="kategoriID" />
+          </Key>
+          <Property Name="kategoriID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="kategoriAd" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Sayfa">
+          <Key>
+            <PropertyRef Name="sayfaID" />
+          </Key>
+          <Property Name="sayfaID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="sayfaAdi" Type="nvarchar" MaxLength="500" />
+          <Property Name="sayfaOkunma" Type="int" />
+          <Property Name="sayfaKategori" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Video">
+          <Key>
+            <PropertyRef Name="videoID" />
+          </Key>
+          <Property Name="videoID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="videoAciklama" Type="nvarchar(max)" />
+          <Property Name="videoYol" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Yonetici">
+          <Key>
+            <PropertyRef Name="yoneticiID" />
+          </Key>
+          <Property Name="yoneticiID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="yoneticiAdSoyad" Type="nvarchar" MaxLength="50" />
+          <Property Name="yoneticiEmail" Type="nvarchar" MaxLength="50" />
+          <Property Name="yoneticiKullaniciAd" Type="nvarchar" MaxLength="50" />
+          <Property Name="yoneticiSifre" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Ziyaretci">
+          <Key>
+            <PropertyRef Name="ziyaretciID" />
+          </Key>
+          <Property Name="ziyaretciID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ZiyaretciAdSoyad" Type="nvarchar" MaxLength="50" />
+          <Property Name="ziyaretciEmail" Type="nvarchar" MaxLength="50" />
+          <Property Name="ziyaretciIcerik" Type="nvarchar(max)" />
+          <Property Name="ziyaretciOnay" Type="bit" />
+          <Property Name="ziyaretciTarih" Type="datetime" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="atak_testcaseModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="atak_testcaseEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Fotograf" EntityType="atak_testcaseModel.Fotograf" />
+          <EntitySet Name="Haber" EntityType="atak_testcaseModel.Haber" />
+          <EntitySet Name="Kategori" EntityType="atak_testcaseModel.Kategori" />
+          <EntitySet Name="Sayfa" EntityType="atak_testcaseModel.Sayfa" />
+          <EntitySet Name="Video" EntityType="atak_testcaseModel.Video" />
+          <EntitySet Name="Yonetici" EntityType="atak_testcaseModel.Yonetici" />
+          <EntitySet Name="Ziyaretci" EntityType="atak_testcaseModel.Ziyaretci" />
+        </EntityContainer>
+        <EntityType Name="Fotograf">
+          <Key>
+            <PropertyRef Name="fotografID" />
+          </Key>
+          <Property Name="fotografID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fotografYol" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Type="String" Name="fotografAciklama" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Haber">
+          <Key>
+            <PropertyRef Name="haberID" />
+          </Key>
+          <Property Name="haberID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="haberBaslik" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="haberIcerik" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="haberTarih" Type="DateTime" />
+          <Property Name="haberOkunmaSayisi" Type="Int32" />
+          <Property Type="String" Name="haberTag" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Kategori">
+          <Key>
+            <PropertyRef Name="kategoriID" />
+          </Key>
+          <Property Name="kategoriID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="kategoriAd" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Sayfa">
+          <Key>
+            <PropertyRef Name="sayfaID" />
+          </Key>
+          <Property Name="sayfaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sayfaAdi" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="sayfaOkunma" Type="Int32" />
+          <Property Name="sayfaKategori" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Video">
+          <Key>
+            <PropertyRef Name="videoID" />
+          </Key>
+          <Property Name="videoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="videoYol" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Type="String" Name="videoAciklama" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Yonetici">
+          <Key>
+            <PropertyRef Name="yoneticiID" />
+          </Key>
+          <Property Name="yoneticiID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="yoneticiAdSoyad" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="yoneticiEmail" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="yoneticiKullaniciAd" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="yoneticiSifre" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Ziyaretci">
+          <Key>
+            <PropertyRef Name="ziyaretciID" />
+          </Key>
+          <Property Name="ziyaretciID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ZiyaretciAdSoyad" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ziyaretciEmail" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ziyaretciIcerik" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="ziyaretciOnay" Type="Boolean" />
+          <Property Name="ziyaretciTarih" Type="DateTime" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="atak_testcaseModelStoreContainer" CdmEntityContainer="atak_testcaseEntities1">
+          <EntitySetMapping Name="Fotograf">
+            <EntityTypeMapping TypeName="atak_testcaseModel.Fotograf">
+              <MappingFragment StoreEntitySet="Fotograf">
+                <ScalarProperty Name="fotografAciklama" ColumnName="fotografAciklama" />
+                <ScalarProperty Name="fotografID" ColumnName="fotografID" />
+                <ScalarProperty Name="fotografYol" ColumnName="fotografYol" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Haber">
+            <EntityTypeMapping TypeName="atak_testcaseModel.Haber">
+              <MappingFragment StoreEntitySet="Haber">
+                <ScalarProperty Name="haberTag" ColumnName="haberTag" />
+                <ScalarProperty Name="haberID" ColumnName="haberID" />
+                <ScalarProperty Name="haberBaslik" ColumnName="haberBaslik" />
+                <ScalarProperty Name="haberIcerik" ColumnName="haberIcerik" />
+                <ScalarProperty Name="haberTarih" ColumnName="haberTarih" />
+                <ScalarProperty Name="haberOkunmaSayisi" ColumnName="haberOkunmaSayisi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Kategori">
+            <EntityTypeMapping TypeName="atak_testcaseModel.Kategori">
+              <MappingFragment StoreEntitySet="Kategori">
+                <ScalarProperty Name="kategoriID" ColumnName="kategoriID" />
+                <ScalarProperty Name="kategoriAd" ColumnName="kategoriAd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sayfa">
+            <EntityTypeMapping TypeName="atak_testcaseModel.Sayfa">
+              <MappingFragment StoreEntitySet="Sayfa">
+                <ScalarProperty Name="sayfaID" ColumnName="sayfaID" />
+                <ScalarProperty Name="sayfaAdi" ColumnName="sayfaAdi" />
+                <ScalarProperty Name="sayfaOkunma" ColumnName="sayfaOkunma" />
+                <ScalarProperty Name="sayfaKategori" ColumnName="sayfaKategori" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Video">
+            <EntityTypeMapping TypeName="atak_testcaseModel.Video">
+              <MappingFragment StoreEntitySet="Video">
+                <ScalarProperty Name="videoAciklama" ColumnName="videoAciklama" />
+                <ScalarProperty Name="videoID" ColumnName="videoID" />
+                <ScalarProperty Name="videoYol" ColumnName="videoYol" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Yonetici">
+            <EntityTypeMapping TypeName="atak_testcaseModel.Yonetici">
+              <MappingFragment StoreEntitySet="Yonetici">
+                <ScalarProperty Name="yoneticiID" ColumnName="yoneticiID" />
+                <ScalarProperty Name="yoneticiAdSoyad" ColumnName="yoneticiAdSoyad" />
+                <ScalarProperty Name="yoneticiEmail" ColumnName="yoneticiEmail" />
+                <ScalarProperty Name="yoneticiKullaniciAd" ColumnName="yoneticiKullaniciAd" />
+                <ScalarProperty Name="yoneticiSifre" ColumnName="yoneticiSifre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ziyaretci">
+            <EntityTypeMapping TypeName="atak_testcaseModel.Ziyaretci">
+              <MappingFragment StoreEntitySet="Ziyaretci">
+                <ScalarProperty Name="ziyaretciID" ColumnName="ziyaretciID" />
+                <ScalarProperty Name="ZiyaretciAdSoyad" ColumnName="ZiyaretciAdSoyad" />
+                <ScalarProperty Name="ziyaretciEmail" ColumnName="ziyaretciEmail" />
+                <ScalarProperty Name="ziyaretciIcerik" ColumnName="ziyaretciIcerik" />
+                <ScalarProperty Name="ziyaretciOnay" ColumnName="ziyaretciOnay" />
+                <ScalarProperty Name="ziyaretciTarih" ColumnName="ziyaretciTarih" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="atak">
+        <EntityTypeShape EntityType="atak_testcaseModel.Fotograf" Width="1.5" PointX="0.75" PointY="0.75" Height="1.4033821614583331" IsExpanded="true" />
+        <EntityTypeShape EntityType="atak_testcaseModel.Haber" Width="1.5" PointX="2.75" PointY="0.75" Height="1.9802864583333335" IsExpanded="true" />
+        <EntityTypeShape EntityType="atak_testcaseModel.Kategori" Width="1.5" PointX="0.75" PointY="3.75" Height="1.4033821614583322" IsExpanded="true" />
+        <EntityTypeShape EntityType="atak_testcaseModel.Sayfa" Width="1.5" PointX="2.75" PointY="3.75" Height="1.7879850260416657" IsExpanded="true" />
+        <EntityTypeShape EntityType="atak_testcaseModel.Video" Width="1.5" PointX="4.75" PointY="0.75" Height="1.4033821614583317" IsExpanded="true" />
+        <EntityTypeShape EntityType="atak_testcaseModel.Yonetici" Width="1.5" PointX="4.75" PointY="3.75" Height="1.9802864583333322" IsExpanded="true" />
+        <EntityTypeShape EntityType="atak_testcaseModel.Ziyaretci" Width="1.5" PointX="6.75" PointY="0.75" Height="2.1725878906249996" IsExpanded="true" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

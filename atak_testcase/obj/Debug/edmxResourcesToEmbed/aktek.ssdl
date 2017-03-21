@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="atak_testcaseModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="atak_testcaseModelStoreContainer">
+    <EntitySet Name="Fotograf" EntityType="atak_testcaseModel.Store.Fotograf" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Haber" EntityType="atak_testcaseModel.Store.Haber" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Kategori" EntityType="atak_testcaseModel.Store.Kategori" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Sayfa" EntityType="atak_testcaseModel.Store.Sayfa" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Video" EntityType="atak_testcaseModel.Store.Video" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Yonetici" EntityType="atak_testcaseModel.Store.Yonetici" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Ziyaretci" EntityType="atak_testcaseModel.Store.Ziyaretci" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="Fotograf">
+    <Key>
+      <PropertyRef Name="fotografID" />
+    </Key>
+    <Property Name="fotografID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="fotografYol" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="Haber">
+    <Key>
+      <PropertyRef Name="haberID" />
+    </Key>
+    <Property Name="haberID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="haberBaslik" Type="nvarchar" MaxLength="500" />
+    <Property Name="haberIcerik" Type="nvarchar(max)" />
+    <Property Name="haberTarih" Type="datetime" />
+    <Property Name="haberOkunmaSayisi" Type="int" />
+  </EntityType>
+  <EntityType Name="Kategori">
+    <Key>
+      <PropertyRef Name="kategoriID" />
+    </Key>
+    <Property Name="kategoriID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="kategoriAd" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Sayfa">
+    <Key>
+      <PropertyRef Name="sayfaID" />
+    </Key>
+    <Property Name="sayfaID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="sayfaAdi" Type="nvarchar" MaxLength="500" />
+    <Property Name="sayfaOkunma" Type="int" />
+    <Property Name="sayfaKategori" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Video">
+    <Key>
+      <PropertyRef Name="videoID" />
+    </Key>
+    <Property Name="videoID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="videoYol" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="Yonetici">
+    <Key>
+      <PropertyRef Name="yoneticiID" />
+    </Key>
+    <Property Name="yoneticiID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="yoneticiAdSoyad" Type="nvarchar" MaxLength="50" />
+    <Property Name="yoneticiEmail" Type="nvarchar" MaxLength="50" />
+    <Property Name="yoneticiKullaniciAd" Type="nvarchar" MaxLength="50" />
+    <Property Name="yoneticiSifre" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Ziyaretci">
+    <Key>
+      <PropertyRef Name="ziyaretciID" />
+    </Key>
+    <Property Name="ziyaretciID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ZiyaretciAdSoyad" Type="nvarchar" MaxLength="50" />
+    <Property Name="ziyaretciEmail" Type="nvarchar" MaxLength="50" />
+    <Property Name="ziyaretciIcerik" Type="nvarchar(max)" />
+    <Property Name="ziyaretciOnay" Type="bit" />
+    <Property Name="ziyaretciTarih" Type="datetime" />
+  </EntityType>
+</Schema>

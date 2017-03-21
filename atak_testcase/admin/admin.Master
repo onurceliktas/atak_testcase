@@ -1,0 +1,73 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="admin.master.cs" Inherits="atak_testcase.admin.admin" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="admin.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div class="kutu">
+        <div class="banner" onclick="location.href='default.aspx'" style="background-image: url(../img/ataklogo.jpg);
+            cursor: pointer;">
+        </div>
+        <div class="ust">
+            <div style="padding: 10px; background-image: url('/img/ust_arka.jpg');">
+                <img src="../img/profile.png" alt="Profile" />
+                <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                &nbsp;</div>
+        </div>
+        <div class="menu">
+            <div class="backdiv" style="background-color: #DFE4E5; height: 20px; margin-left: 5px;
+                width: auto; padding: 10px; float: left;">
+                <img src="../img/news.png" alt="News" style="width: 11px; height: 10px" />
+                <a href="haberler.aspx">Haberler</a>
+            </div>
+            <div class="backdiv" style="background-color: #DFE4E5; height: 20px; margin-left: 5px;
+                width: auto; padding: 10px; float: left;">
+                <img src="../img/pages.png" alt="Pages" style="width: 11px; height: 10px" />
+                <a href="sayfalar.aspx">Sayfalar</a>
+            </div>
+            <div class="backdiv" style="background-color: #DFE4E5; height: 20px; margin-left: 5px;
+                width: auto; padding: 10px; float: left; background-image: url('/img/ustmenu.jpg');">
+                <img src="../img/photo_gallery.png" alt="Photo Gallery" style="width: 11px; height: 10px" />
+                <a href="foto_galeri.aspx">Foto Galeri</a>
+            </div>
+            <div class="backdiv" style="background-color: #DFE4E5; height: 20px; margin-left: 5px;
+                width: auto; padding: 10px; float: left; background-image: url('/img/ustmenu.jpg');">
+                <img src="../img/video_gallery.png" alt="Video Gallery" style="width: 11px; height: 10px" />
+                <a href="video_galeri.aspx">Video Galeri</a>
+            </div>
+            <div class="backdiv" style="background-color: #DFE4E5; height: 20px; margin-left: 5px;
+                width: auto; padding: 10px; float: left; background-image: url('/img/ustmenu.jpg');">
+                <img src="../img/guest_book.png" alt="Guest Book" style="width: 11px; height: 10px" />
+                <a href="ziyaretci_defteri.aspx">Ziyaretci Defteri</a>
+            </div>
+            <div class="backdiv" style="background-color: #DFE4E5; height: 20px; margin-left: 5px;
+                width: auto; padding: 10px; float: left; background-image: url('/img/ustmenu.jpg');">
+                <img src="../img/admins.png" alt="Admins" style="width: 11px; height: 10px" />
+                <a href="yoneticiler.aspx">Yoneticiler</a>
+            </div>
+            <div class="backdiv" onclick="cikis()" style="background-color: #DFE4E5; height: 20px;
+                margin-left: 5px; width: auto; padding: 10px; float: right; background-image: url('/img/ustmenu.jpg');">
+                <img src="../img/log_out.png" alt="Log Out" style="width: 11px; height: 10px" />
+                <a href="giris.aspx" onclick="cikis()">Cikis</a>
+            </div>
+        </div>
+        
+            <div class="icerik">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+         <div class="alt">
+            Her Hakkı Saklıdır © 2003 - 2016 Atak Domain Hosting İnt. ve Bilgi TeknolojileriLtd.
+            Şti. Abuse Contact E-Mail: abuse@atakteknoloji.com Abuse Contact Phone: +90 532
+            713 55 05- Abuse Issue Handling Process
+        </div>
+    </div>
+    </form>
+</body>
+</html>

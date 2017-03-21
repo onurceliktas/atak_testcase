@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="atak_testcaseModelStoreContainer" CdmEntityContainer="atak_testcaseEntities">
+    <EntitySetMapping Name="Fotograf">
+      <EntityTypeMapping TypeName="atak_testcaseModel.Fotograf">
+        <MappingFragment StoreEntitySet="Fotograf">
+          <ScalarProperty Name="fotografID" ColumnName="fotografID" />
+          <ScalarProperty Name="fotografYol" ColumnName="fotografYol" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Haber">
+      <EntityTypeMapping TypeName="atak_testcaseModel.Haber">
+        <MappingFragment StoreEntitySet="Haber">
+          <ScalarProperty Name="haberIcerik" ColumnName="haberIcerik" />
+          <ScalarProperty Name="haberID" ColumnName="haberID" />
+          <ScalarProperty Name="haberBaslik" ColumnName="haberBaslik" />
+          <ScalarProperty Name="haberTarih" ColumnName="haberTarih" />
+          <ScalarProperty Name="haberOkunmaSayisi" ColumnName="haberOkunmaSayisi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kategori">
+      <EntityTypeMapping TypeName="atak_testcaseModel.Kategori">
+        <MappingFragment StoreEntitySet="Kategori">
+          <ScalarProperty Name="kategoriID" ColumnName="kategoriID" />
+          <ScalarProperty Name="kategoriAd" ColumnName="kategoriAd" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sayfa">
+      <EntityTypeMapping TypeName="atak_testcaseModel.Sayfa">
+        <MappingFragment StoreEntitySet="Sayfa">
+          <ScalarProperty Name="sayfaID" ColumnName="sayfaID" />
+          <ScalarProperty Name="sayfaAdi" ColumnName="sayfaAdi" />
+          <ScalarProperty Name="sayfaOkunma" ColumnName="sayfaOkunma" />
+          <ScalarProperty Name="sayfaKategori" ColumnName="sayfaKategori" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Video">
+      <EntityTypeMapping TypeName="atak_testcaseModel.Video">
+        <MappingFragment StoreEntitySet="Video">
+          <ScalarProperty Name="videoID" ColumnName="videoID" />
+          <ScalarProperty Name="videoYol" ColumnName="videoYol" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Yonetici">
+      <EntityTypeMapping TypeName="atak_testcaseModel.Yonetici">
+        <MappingFragment StoreEntitySet="Yonetici">
+          <ScalarProperty Name="yoneticiID" ColumnName="yoneticiID" />
+          <ScalarProperty Name="yoneticiAdSoyad" ColumnName="yoneticiAdSoyad" />
+          <ScalarProperty Name="yoneticiEmail" ColumnName="yoneticiEmail" />
+          <ScalarProperty Name="yoneticiKullaniciAd" ColumnName="yoneticiKullaniciAd" />
+          <ScalarProperty Name="yoneticiSifre" ColumnName="yoneticiSifre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ziyaretci">
+      <EntityTypeMapping TypeName="atak_testcaseModel.Ziyaretci">
+        <MappingFragment StoreEntitySet="Ziyaretci">
+          <ScalarProperty Name="ziyaretciID" ColumnName="ziyaretciID" />
+          <ScalarProperty Name="ZiyaretciAdSoyad" ColumnName="ZiyaretciAdSoyad" />
+          <ScalarProperty Name="ziyaretciEmail" ColumnName="ziyaretciEmail" />
+          <ScalarProperty Name="ziyaretciIcerik" ColumnName="ziyaretciIcerik" />
+          <ScalarProperty Name="ziyaretciOnay" ColumnName="ziyaretciOnay" />
+          <ScalarProperty Name="ziyaretciTarih" ColumnName="ziyaretciTarih" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

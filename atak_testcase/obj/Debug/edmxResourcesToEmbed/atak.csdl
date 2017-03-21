@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="atak_testcaseModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="atak_testcaseEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Fotograf" EntityType="atak_testcaseModel.Fotograf" />
+    <EntitySet Name="Haber" EntityType="atak_testcaseModel.Haber" />
+    <EntitySet Name="Kategori" EntityType="atak_testcaseModel.Kategori" />
+    <EntitySet Name="Sayfa" EntityType="atak_testcaseModel.Sayfa" />
+    <EntitySet Name="Video" EntityType="atak_testcaseModel.Video" />
+    <EntitySet Name="Yonetici" EntityType="atak_testcaseModel.Yonetici" />
+    <EntitySet Name="Ziyaretci" EntityType="atak_testcaseModel.Ziyaretci" />
+  </EntityContainer>
+  <EntityType Name="Fotograf">
+    <Key>
+      <PropertyRef Name="fotografID" />
+    </Key>
+    <Property Name="fotografID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fotografYol" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Type="String" Name="fotografAciklama" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Haber">
+    <Key>
+      <PropertyRef Name="haberID" />
+    </Key>
+    <Property Name="haberID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="haberBaslik" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="haberIcerik" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="haberTarih" Type="DateTime" />
+    <Property Name="haberOkunmaSayisi" Type="Int32" />
+    <Property Type="String" Name="haberTag" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Kategori">
+    <Key>
+      <PropertyRef Name="kategoriID" />
+    </Key>
+    <Property Name="kategoriID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="kategoriAd" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Sayfa">
+    <Key>
+      <PropertyRef Name="sayfaID" />
+    </Key>
+    <Property Name="sayfaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="sayfaAdi" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="sayfaOkunma" Type="Int32" />
+    <Property Name="sayfaKategori" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Video">
+    <Key>
+      <PropertyRef Name="videoID" />
+    </Key>
+    <Property Name="videoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="videoYol" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Type="String" Name="videoAciklama" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Yonetici">
+    <Key>
+      <PropertyRef Name="yoneticiID" />
+    </Key>
+    <Property Name="yoneticiID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="yoneticiAdSoyad" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="yoneticiEmail" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="yoneticiKullaniciAd" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="yoneticiSifre" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Ziyaretci">
+    <Key>
+      <PropertyRef Name="ziyaretciID" />
+    </Key>
+    <Property Name="ziyaretciID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ZiyaretciAdSoyad" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ziyaretciEmail" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ziyaretciIcerik" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="ziyaretciOnay" Type="Boolean" />
+    <Property Name="ziyaretciTarih" Type="DateTime" />
+  </EntityType>
+</Schema>
